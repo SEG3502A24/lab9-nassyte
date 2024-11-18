@@ -20,10 +20,10 @@ class WebSecurityConfig {
     fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
         http
             .authorizeHttpRequests { auth ->
-                auth.anyRequest().authenticated() // Require authentication for all requests
+                auth.anyRequest().authenticated()
             }
-            .httpBasic { } // Enables HTTP Basic Authentication without deprecated httpBasic()
-            .logout { logout -> logout.permitAll() } // Enables logout without deprecated logout()
+            .httpBasic { }
+            .logout { logout -> logout.permitAll() }
 
         return http.build()
     }
